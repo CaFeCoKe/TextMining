@@ -5,4 +5,5 @@
  - 사용하는 기본 라이브러리
    - [KoNLPy](https://konlpy.org/ko/latest/)
    - [NLTK](https://www.nltk.org/api/nltk.html)
+   - [scikit-learn](https://scikit-learn.org/stable/modules/classes.html)
    - [Transformers](https://huggingface.co/docs/transformers/index)
