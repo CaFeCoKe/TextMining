@@ -43,4 +43,25 @@
        - log-odds : 사건이 발생할 확률을 발생하지 하지 않을 확률로 나눈 값이 odds다. 이 값에 log를 취한것.<br><br>
        ![odds](https://user-images.githubusercontent.com/86700191/170240378-ef7f28f7-08a5-47cd-bc6e-1a95721a64d8.PNG)
 <br><br>
-- 릿지 회귀분석 (Ridge Regression) : 
+- 릿지 회귀분석 (Ridge Regression) : 최소제곱법과 매우 유사하나, 가중치들의 제곱합(squared sum of weights)을 최소화하는 것을 추가적인 제약 조건으로 한다.
+L2 규제를 적용하여 선형회귀분석의 과대적합 문제를 해소하려는데에 목적이 있다.<br><br>
+![Ridge](https://user-images.githubusercontent.com/86700191/170689524-0284225b-da83-41a8-9041-6995bf158fa8.PNG)
+<br><br>
+n은 데이터의 개수<br>
+p는 feature의 개수. 단순선형회귀 p=1이 되고, 다중회귀에서는 p>=2<br>
+y는 실제 target의 값<br>
+ß는 가중치로서 OLS의 feature 계수라고 볼 수 있다.<br>
+λ는 ridge 모형의 하이퍼파라미터로 alpha값을 뜻함.<br>
+첫째 항의 의미는 편차의 제곱합이다. 이는 OLS에서 feature 계수 ß를 도출하는 식이다.<br>
+둘째 항의 의미하는 것이 L2 규제이다..<br><br>
+- 라쏘 회귀분석 : L1규제를 통해 feature간 다중공선성을 제거할 수 있는 방법이며, 추정계수의 절댓값 합을 최소로 하는것이라 볼 수 있다.<br><br>
+![Lasso](https://user-images.githubusercontent.com/86700191/170691719-5502aa12-7673-4971-a667-630ed39a4863.PNG)
+<br><br>
+n은 데이터의 개수<br>
+p는 feature의 개수. 단순선형회귀 p=1이 되고, 다중회귀에서는 p>=2<br>
+y는 실제 target의 값<br>
+ß는 가중치로서 OLS의 feature 계수라고 볼 수 있다.<br>
+λ는 라쏘회귀의 하이퍼파라미터로 규제 강도를 의미한다.<br>
+  - 만약 λ = 0 이라면 OLS와 동일한 형태의 결과가 출력된다.
+  - 만약 λ가 무한의 값이라면 아무 feature도 선택되지 않는다.
+  - λ가 증가하면 편향성(bias)가 증가하지만 variance는 감소한다.
