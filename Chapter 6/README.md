@@ -23,10 +23,8 @@
 
 - LSA (Latent Semantic Analysis) : 잠재 의미 분석이라 불리며 기본적으로 DTM이나 TF-IDF 행렬에 절단된 SVD(truncated SVD)를 사용하여 차원을 축소시키고, 단어들의 잠재적인 의미를 끌어내는 방법이다. <br><br>
   - SVD (Singular Value Decomposition) : 특이값 분해라고 불리며 실수 벡터 공간에 한정하여 내용을 설명한다. 그리고 다음과 같이 A가 m × n 행렬일 때, 다음과 같이 3개의 행렬의 곱으로 분해(decomposition)하는 것을 말한다.<br>
-  ![svg](https://user-images.githubusercontent.com/86700191/172538628-fbe3de32-1b91-40d5-bd7e-f0378fc83aee.PNG)
-  <br>
+  ![svg](https://user-images.githubusercontent.com/86700191/172538628-fbe3de32-1b91-40d5-bd7e-f0378fc83aee.PNG) <br>
   ![svg2](https://user-images.githubusercontent.com/86700191/172538634-ee93f20b-8695-4511-87c1-8536ccd1b5ae.PNG)
-  <br><br>
     - 절단된 SVD (Truncated SVD) : 위의 SVD를 풀 SVD (full SVD)라고 한다. LSA에서는 절단된 SVD를 사용한다.<br><br>
     ![T-SVD](https://user-images.githubusercontent.com/86700191/172539670-f41fd8cb-b583-4293-8e8c-d0f545915a07.PNG)
     <br><br>
