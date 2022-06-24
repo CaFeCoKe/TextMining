@@ -16,3 +16,11 @@
     ![Skip-gram](https://user-images.githubusercontent.com/86700191/174987771-8d11d67c-5860-4288-ab65-cb7d67b83d1b.png)
     <br><br>
     CBOW와는 반대의 구조이며, 한개의 중심 단어에 대해서 주변 단어를 예측하므로 은닉(투사)층에서 벡터들의 평균을 구하는 과정은 없다. 보통 CBOW보다 성능이 좋다고 알려져 있다.
+<br><br>
+- ELMo (Embeddings from Language Model) : 언어 모델로 하는 임베딩 방법인 ELMo의 가장 큰 특징은 사전 훈련된 언어 모델(Pre-trained language model)을 사용한다는 점이다. 기본 아이디어로는 같은 표기의 단어라도 문맥에 따라서 다르게 워드 임베딩을 할 수 있으면 자연어 처리의 성능을 올릴 수 있을 수 있다는 점이며, 이를 문맥을 반영한 워드 임베딩(Contextualized Word Embedding).이라 한다. <br><br>
+  - Word2Vec의 단점 : 동음이의어의 문제가 크다. 언어는 같은 단어여도 문맥에 따라 다른 의미를 보여주는 단어들이 있는데, Word2Vec은 이를 모두 동일한 벡터로 처리하게 되어 전혀 다른 의미임에도 불구하고 같은 의미로 처리 된다는 점이다.<br><br>
+  - ELMo의 구조 : 기본적으로 biLM(Bidirectional Language Model)으로 사전 학습을 한다. biLM 중 Bi-LSTM과 비슷한 사전 학습을 하게 되는데 이 차이점은 순방향, 역방향 은닉층을 concat 시키는 Bi-LSTM 구조가 아닌 2개의 순방향, 역방향 언어 모델을 각각 학습시키는 구조로 되어 있다<br><br>
+    - ELMo의 biLM 과 Bi-LSTM의 차이점 (갈색 박스 부분)<br><br>
+    ![ELMo](https://user-images.githubusercontent.com/86700191/175290222-7a710323-8e1c-4a1c-9de8-a76303dcbeb0.PNG)
+    <br><br>
+    ![2-Bi-LSTM](https://user-images.githubusercontent.com/86700191/175290282-094bd908-685a-4c89-880b-7169689ae9dc.png)
