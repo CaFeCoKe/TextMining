@@ -1,6 +1,6 @@
 # Chapter 11. Word2Vec, ELMo, Doc2Vec의 이해
 
-- 워드투벡터 (Word2Vec) : 단어 벡터 간 유의미한 유사도를 반영할 수 있도록 단어의 의미를 수치화 할 수 있는 방법중 하나이다.<br><br>
+- Word2Vec : 단어 벡터 간 유의미한 유사도를 반영할 수 있도록 단어의 의미를 수치화 할 수 있는 방법중 하나이다.<br><br>
   - 희소 표현 (Sparse Representation) : 원-핫 인코딩을 통해서 얻은 원-핫 벡터는 표현하고자 하는 단어의 인덱스의 값만 1이고, 나머지 인덱스에는 전부 0으로 표현되는 벡터 표현 방법이다. 이와 같이 벡터 또는 행렬의 값이 대부분이 0으로 표현되는 방법을 희소 표현이라 한다.<br>
 이러한 표현 방법은 각 단어 벡터간 유의미한 유사성을 표현할 수 없다는 단점이 있다.<br><br>
   - 분산 표현 (Distributed Representation) : 단어의 의미를 다차원 공간에 벡터화하는 방법을 사용하는데 이러한 표현을 분산 표현이라 한다. 기본적으로 분포 가설(distributional hypothesis)이라는 가정 하에 만들어진 표현 방법이며, 이 가정은 '비슷한 문맥에서 등장하는 단어들은 비슷한 의미를 가진다' 라는 것이다.<br>
@@ -12,7 +12,7 @@
     <br><br>
     여러 개의 단어가 있기 때문에, 은닉층에서 입력 벡터와 행렬 W의 곱으로 구성된 단어 벡터의 평균을 구하게 된다. 이는 분산된 많은 정보에 대해 평활화 시키기 때문에 작은 데이터 세트에 대해 성능이 좋다고 할 수 있다. 
     또한, Word2Vec의 은닉층은 일반적인 은닉층과는 달리 활성화 함수가 존재하지 않으며 룩업 테이블이라는 연산을 담당하는 층으로 투사층(projection layer)이라고 부르기도 한다.<br><br>
-    - Skip-gram : 중심 단어들을 입력으로 주변 단어들을 예측하는 방법이다.<br><br>
+    - Skip-Gram : 중심 단어들을 입력으로 주변 단어들을 예측하는 방법이다.<br><br>
     ![Skip-gram](https://user-images.githubusercontent.com/86700191/174987771-8d11d67c-5860-4288-ab65-cb7d67b83d1b.png)
     <br><br>
     CBOW와는 반대의 구조이며, 한개의 중심 단어에 대해서 주변 단어를 예측하므로 은닉(투사)층에서 벡터들의 평균을 구하는 과정은 없다. 보통 CBOW보다 성능이 좋다고 알려져 있다.
@@ -24,3 +24,12 @@
     ![ELMo](https://user-images.githubusercontent.com/86700191/175290222-7a710323-8e1c-4a1c-9de8-a76303dcbeb0.PNG)
     <br><br>
     ![2-Bi-LSTM](https://user-images.githubusercontent.com/86700191/175290282-094bd908-685a-4c89-880b-7169689ae9dc.png)
+    <br><br>
+  - ELMo의 단점 : 안정성이 보장되지 않는다. 사용자의 환경에 따라 다양한 에러의 발생이 있을 수 있고, 에러를 해결하기 어렵다는 문제점이 있다. 
+<br><br>
+- Doc2Vec : Word2Vec을 문장 단위로 확장한 문서 임베딩 기법이다. BoW방식의 카운트 벡터나 TF-IDF 벡터가 문서를 임베딩한다는 점에서는 비슷하나, 단어의 순서를 고려한 문맥 정보를 Doc2Vec에서는 포함 된다는 점이 차이점이다.<br><br>
+  - 학습 방식
+    - DM (Distributed memory) : PV-DM(the Distributed Memory Model of Paragraph Vectors)이라고도 불린다. Word2Vec의 CBOW에 문서ID(Paragraph ID)를 추가한 형태이며, 앞의 단어들과 문서ID를 이용하여 다음 단어를 예측하는 방식이다..<br><br>
+    ![DM](https://user-images.githubusercontent.com/86700191/175773751-cef4a53c-f039-4955-a48e-d5b62a331048.PNG)
+    - DBOW (Distributed Bag of Words) : PV-DBOW(the Distributed Bag of Words version of Paragraph Vector)이라고도 불린다. Word2Vec의 Skip-Gram에 문서ID(Paragraph ID)를 추가한 형태이며, 문서ID로 일련의 단어들을 예측하는 방식이다..<br><br>
+    ![DBOW](https://user-images.githubusercontent.com/86700191/175773753-64da7127-60c1-4bef-a9bf-baa505f77aec.PNG)

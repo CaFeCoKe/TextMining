@@ -20,8 +20,8 @@
    - Chapter 7 : 토픽 모델링 (Topic Modeling)
    - Chapter 8 : 감성 분석 (Sentiment Analysis)
    - Chapter 10 : 딥러닝을 이용한 문서 분류 (Document Classification using Deep Learning)
-   - Chapter 11 :
-   - Chapter 12 :
+   - Chapter 11 : Word2Vec, ELMo, Doc2Vec의 이해 (Understanding Word2Vec, ELMo, Doc2Vec)
+   - Chapter 12 : CNN을 응용한 문서 분류 (Document Classification using CNN)
    - Chapter 13 :
    - Chapter 14 :
    - Chapter 15 :
