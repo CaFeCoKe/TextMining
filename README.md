@@ -22,7 +22,8 @@
    - Chapter 10 : 딥러닝을 이용한 문서 분류 (Document Classification using Deep Learning)
    - Chapter 11 : Word2Vec, ELMo, Doc2Vec의 이해 (Understanding Word2Vec, ELMo, Doc2Vec)
    - Chapter 12 : CNN을 응용한 문서 분류 (Document Classification using CNN)
-   - Chapter 13 :
-   - Chapter 14 :
-   - Chapter 15 :
-   - Chapter 16 :
+   - Chapter 13 : [어텐션과 트랜스포머 (Attention & Transfomers)](https://github.com/CaFeCoKe/NLP_BERT_GPT/tree/main/Chapter%203)
+   <br> - 다른 rapository에 설명(현 Chapter부터 설명은 여기에 추가)
+   - Chapter 14 : BERT (Bidirectional Encoder Representations from Transformers) 의 이해와 간단한 활용
+   - Chapter 15 : BERT 사전학습(pre-trained) 모형에 대한 미세조정(Fine-tuning) 학습
+   - Chapter 16 : 한국어 문서에 대한 BERT 황용
